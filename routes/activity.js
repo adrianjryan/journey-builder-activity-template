@@ -7,6 +7,9 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
 
+
+
+
 exports.logExecuteData = [];
 
 function logData(req) {
@@ -88,6 +91,21 @@ exports.execute = function (req, res) {
             var decodedArgs = decoded.inArguments[0];
             
             logData(req);
+
+            request.post({
+                "headers": { "content-type": "application/json" },
+                "url": "http://httpbin.org/post",
+                "body": JSON.stringify({
+                    "firstname": "Nic",
+                    "lastname": "Raboy"
+                })
+            }, (error, response, body) => {
+                if(error) {
+                    return console.dir(error);
+                }
+                console.dir(JSON.parse(body));
+            });
+
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
