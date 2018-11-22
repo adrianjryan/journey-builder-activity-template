@@ -92,19 +92,19 @@ exports.execute = function (req, res) {
             
             logData(req);
 
-            request.post({
-                "headers": { "content-type": "application/json" },
-                "url": "http://httpbin.org/post",
-                "body": JSON.stringify({
-                    "firstname": "Nic",
-                    "lastname": "Raboy"
-                })
-            }, (error, response, body) => {
-                if(error) {
-                    return console.dir(error);
-                }
-                console.dir(JSON.parse(body));
-            });
+            // request.post({
+            //     "headers": { "content-type": "application/json" },
+            //     "url": "http://httpbin.org/post",
+            //     "body": JSON.stringify({
+            //         "firstname": "Nic",
+            //         "lastname": "Raboy"
+            //     })
+            // }, (error, response, body) => {
+            //     if(error) {
+            //         return console.dir(error);
+            //     }
+            //     console.dir(JSON.parse(body));
+            // });
 
             res.send(200, 'Execute');
         } else {
