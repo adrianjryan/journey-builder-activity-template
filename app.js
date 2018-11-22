@@ -44,6 +44,11 @@ app.post('/validate/', activity.validate );
 app.post('/publish/', activity.publish );
 app.post('/execute/', activity.execute );
 
+app.get('/save/', activity.save );
+app.get('/validate/', activity.validate );
+app.get('/publish/', activity.publish );
+app.get('/execute/', activity.execute );
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
