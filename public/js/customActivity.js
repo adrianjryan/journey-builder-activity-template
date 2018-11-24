@@ -18,6 +18,7 @@ define([
    
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
+        console.log("--- On Render Custom Activity ---");
         connection.trigger('ready');
 
         connection.trigger('requestTokens');
@@ -26,6 +27,7 @@ define([
     }
 
     function initialize(data) {
+        console.log("--- Initalising Custom Activity ---");
         console.log(data);
         if (data) {
             payload = data;
@@ -39,39 +41,55 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
+        console.log("- Validating arguments ");
         console.log(inArguments);
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
+              //Run through teh rguments and do things with them (key value pairs)  
+              //for example
+              // if (key === 'message') {
+              //       message = val;
+              //   }
               
             });
         });
 
-        connection.trigger('updateButton', {
-            button: 'next',
-            text: 'done',
-            visible: true
-        });
+        // connection.trigger('updateButton', {
+        //     button: 'next',
+        //     text: 'done',
+        //     visible: true
+        // });
+
+        console.log("--- Initalising Custom Activity COMPLETE ---");
     }
 
     function onGetTokens(tokens) {
+        console.log("--- Auth Tokens ---");
         console.log(tokens);
         authTokens = tokens;
     }
 
     function onGetEndpoints(endpoints) {
+        console.log("--- endpoints ---");
         console.log(endpoints);
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+        console.log("--- SAVE Custom Activity ---");
+
+        var name = $('#select1').find('option:selected').html();
+        console.log("Selected")
+        console.log(name)
+        payload.name = "Custom Activity A";
+
+        // var postcardURLValue = $('#postcard-url').val();
+        // var postcardTextValue = $('#postcard-text').val();
 
         payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
+            //"tokens": authTokens,
+            //"emailAddress": "{{Contact.Attribute.EmailAddress}}"
+            "selected" : value
         }];
         
         payload['metaData'].isConfigured = true;

@@ -1,7 +1,7 @@
 {
-  "name": "jb-activity-template",
-  "version": "1.0.0",
-  "description": "Journey Builder Activity Template",
+  "name": "aquient-jb-activity-template",
+  "version": "1.0.1",
+  "description": "Aquient Journey Builder Activity Template",
   "engines": {
     "node": "6.11.1"
   },
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devsutd/journey-builder-activity-template.git"
+    "url": "git+https://github.com/adrianjryan/journey-builder-activity-template.git"
   },
   "keywords": [
     "journey",
@@ -18,12 +18,12 @@
     "salesforce marketing cloud",
     "heroku"
   ],
-  "author": "Devs United",
+  "author": "Aquient - Adrian Ryan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/devsutd/journey-builder-activity-template/issues"
+    "url": "https://github.com/adrianjryan/journey-builder-activity-template/issues"
   },
-  "homepage": "https://github.com/devsutd/journey-builder-activity-template#readme",
+  "homepage": "https://github.com/adrianjryan/journey-builder-activity-template#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "bower": "^1.8.0",
