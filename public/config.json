@@ -10,14 +10,13 @@
         "en-US": {
             "name": "Aquient Templated Custom Journey",
           "description": "This Custom activity is developed off the tested efficient Aquent Joutney Builder Template",
-          //"step1Label": "Configure Activity"
+          "step1Label": "Configure Activity"
         }
     },
     "arguments": {
         "execute": {
            "inArguments":[
-				{
-                    //"emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+				        {
                     "emailAddress": "{{InteractionDefaults.Email}}"
                 }									
 			],
