@@ -8,20 +8,21 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
+            "name": "Aquient Templated Custom Journey",
+          "description": "This Custom activity is developed off the tested efficient Aquent Joutney Builder Template",
+          //"step1Label": "Configure Activity"
         }
     },
     "arguments": {
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                    //"emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                    "emailAddress": "{{InteractionDefaults.Email}}"
                 }									
 			],
           "outArguments": [],
-          "url": "https://aquient-test-customjb-api.herokuapp.com/journeybuilder/execute",
+          "url": "https://aquient-test-customjb-api.herokuapp.com/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,33 +34,33 @@
     "configurationArguments": {
       "applicationExtensionKey": "d34b9a34-36d7-42af-9d81-e04369d33b92",
       "save": {
-        "url": "https://aquient-test-customjb-api.herokuapp.com/journeybuilder/save",
+        "url": "https://aquient-test-customjb-api.herokuapp.com/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://aquient-test-customjb-api.herokuapp.com/journeybuilder/publish",
+        "url": "https://aquient-test-customjb-api.herokuapp.com/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://aquient-test-customjb-api.herokuapp.com/journeybuilder/stop",
+        "url": "https://aquient-test-customjb-api.herokuapp.com/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://aquient-test-customjb-api.herokuapp.com/journeybuilder/validate",
+        "url": "https://aquient-test-customjb-api.herokuapp.com/validate",
         "verb": "POST",
         "useJwt": true
       }
     },
     "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
+        { "label": "Mobile App Interaction Activity", "key": "step1" }
     ],
     "userInterfaces": {
         "configModal": {
-            "height": 400,
-            "width": 1000,
+            "height": 200,
+            "width": 300,
           "fullscreen": false
         }
     },
