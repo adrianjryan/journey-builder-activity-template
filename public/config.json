@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Aquient Templated Custom Journey",
+          "name": "Aquient Templated Custom Journey",
           "description": "This Custom activity is developed off the tested efficient Aquent Joutney Builder Template",
           "step1Label": "Configure Activity"
         }
@@ -53,9 +53,9 @@
         "useJwt": true
       }
     },
-    "wizardSteps": [
-        { "label": "Mobile App Interaction Activity", "key": "step1" }
-    ],
+    // "wizardSteps": [
+    //     { "label": "Mobile App Interaction Activity", "key": "step1" }
+    // ],
     "userInterfaces": {
         "configModal": {
             "height": 200,

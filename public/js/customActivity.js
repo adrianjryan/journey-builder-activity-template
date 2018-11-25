@@ -55,11 +55,11 @@ define([
             });
         });
 
-        // connection.trigger('updateButton', {
-        //     button: 'next',
-        //     text: 'done',
-        //     visible: true
-        // });
+        connection.trigger('updateButton', {
+             button: 'next',
+             text: 'done',
+             visible: true
+        });
 
         console.log("--- Initalising Custom Activity COMPLETE ---");
     }
@@ -78,10 +78,10 @@ define([
     function save() {
         console.log("--- SAVE Custom Activity ---");
 
-        var name = $('#select1').find('option:selected').html();
+        //var name = $('#select1').find('option:selected').html();
         console.log("Selected")
-        console.log(name)
-        payload.name = "Custom Activity A";
+        //console.log(name)
+        //payload.name = "Custom Activity A";
 
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
@@ -89,7 +89,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             //"tokens": authTokens,
             //"emailAddress": "{{Contact.Attribute.EmailAddress}}"
-            "selected" : value
+            "emailAddress" : "adrian@weavsolutions.com"
         }];
         
         payload['metaData'].isConfigured = true;
