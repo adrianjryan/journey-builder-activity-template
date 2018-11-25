@@ -5,7 +5,7 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
-var http = require('https');
+const request = require('request');
 
 exports.logExecuteData = [];
 
@@ -92,20 +92,12 @@ exports.execute = function (req, res) {
             logData(req);
 
             //-- OK SO this is what get called whne this bugger is executed in the Journey
-
-            req.post({
-                "headers": { "content-type": "application/json" },
-                "url": "http://httpbin.org/post",
-                "body": JSON.stringify({
-                    "firstname": "Ar",
-                    "lastname": "Ari"
-                })
-            }, (error, response, body) => {
-                if(error) {
-                    return console.dir(error);
-                }
-                console.dir(JSON.parse(body));
+            request.post('http://httpbin.org/post', form: { 'name':'vABCD' }, (err, res, body) => {
+                if (err) { return console.log(err); }
+                console.log(body.url);
+                console.log(body.explanation);
             });
+
 
             console.log("------123--------");
             // This is a returmn of positive when sh's done.
