@@ -3,7 +3,8 @@
     "metaData": {
         "icon": "images/icon.png",
         "iconSmall": "images/iconSmall.png",
-        "category": "message"
+        "category": "message",
+        "version":"1.2"
     },
     "type": "REST",
     "lang": {
@@ -19,7 +20,7 @@
 				        {
                     "emailAddress": "adrian@aquient.asia"
                 }									
-			],
+			     ],
           "outArguments": [],
           "url": "https://aquient-test-customjb-api.herokuapp.com/execute",
            "verb": "POST",
@@ -31,7 +32,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "d34b9a34-36d7-42af-9d81-e04369d33b92",
+      "applicationExtensionKey":"d34b9a34-36d7-42af-9d81-e04369d33b92",
       "save": {
         "url": "https://aquient-test-customjb-api.herokuapp.com/save",
           "verb": "POST",
@@ -53,6 +54,9 @@
         "useJwt": true
       }
     },
+    "wizardSteps": [
+        { "label": "Configure Activity", "key": "step1" }
+    ],
     "userInterfaces": {
         "configModal": {
             "height": 200,
