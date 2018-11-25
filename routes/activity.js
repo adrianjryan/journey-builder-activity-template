@@ -7,9 +7,6 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
 
-
-
-
 exports.logExecuteData = [];
 
 function logData(req) {
@@ -58,7 +55,7 @@ exports.edit = function (req, res) {
     console.log("Activity: Edit");
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    console.log(req);
     res.send(200, 'Edit');
 };
 
@@ -69,7 +66,7 @@ exports.save = function (req, res) {
     console.log("Activity: Save");
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    console.log(req);
     res.send(200, 'Save');
 };
 
@@ -94,20 +91,24 @@ exports.execute = function (req, res) {
             
             logData(req);
 
-            // request.post({
-            //     "headers": { "content-type": "application/json" },
-            //     "url": "http://httpbin.org/post",
-            //     "body": JSON.stringify({
-            //         "firstname": "Nic",
-            //         "lastname": "Raboy"
-            //     })
-            // }, (error, response, body) => {
-            //     if(error) {
-            //         return console.dir(error);
-            //     }
-            //     console.dir(JSON.parse(body));
-            // });
+            //-- OK SO this is what get called whne this bugger is executed in the Journey
 
+            request.post({
+                "headers": { "content-type": "application/json" },
+                "url": "http://httpbin.org/post",
+                "body": JSON.stringify({
+                    "firstname": "Ar",
+                    "lastname": "Ari"
+                })
+            }, (error, response, body) => {
+                if(error) {
+                    return console.dir(error);
+                }
+                console.dir(JSON.parse(body));
+            });
+
+
+            // This is a returmn of positive when sh's done.
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
@@ -124,7 +125,7 @@ exports.publish = function (req, res) {
     console.log("Activity: Publish");
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    console.log(req);
     res.send(200, 'Publish');
 };
 
@@ -135,6 +136,6 @@ exports.validate = function (req, res) {
     console.log("Activity: Validate");
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    console.log(req);
     res.send(200, 'Validate');
 };
