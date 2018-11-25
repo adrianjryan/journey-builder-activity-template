@@ -43,16 +43,16 @@ define([
         console.log("- Validating arguments ");
         console.log(inArguments);
 
-        $.each(inArguments, function (index, inArgument) {
-            $.each(inArgument, function (key, val) {
-              //Run through teh rguments and do things with them (key value pairs)  
-              //for example
-              // if (key === 'message') {
-              //       message = val;
-              //   }
+        // $.each(inArguments, function (index, inArgument) {
+        //     $.each(inArgument, function (key, val) {
+        //       //Run through teh rguments and do things with them (key value pairs)  
+        //       //for example
+        //       // if (key === 'message') {
+        //       //       message = val;
+        //       //   }
               
-            });
-        });
+        //     });
+        // });
 
         connection.trigger('updateButton', {
              button: 'next',
@@ -84,10 +84,9 @@ define([
 
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
-
-        payload['arguments'].execute.inArguments = [{
-            //"tokens": authTokens,
+                    //"tokens": authTokens,
             //"emailAddress": "{{Contact.Attribute.EmailAddress}}"
+        payload['arguments'].execute.inArguments = [{
             "emailAddress" : "adrian@weavsolutions.com"
         }];
         
