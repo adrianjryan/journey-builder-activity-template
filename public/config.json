@@ -1,5 +1,5 @@
 {
-    "workflowApiVersion": "1.1",
+    "workflowApiVersion": "1.2",
     "metaData": {
         "icon": "images/icon.png",
         "iconSmall": "images/iconSmall.png",
@@ -53,9 +53,6 @@
         "useJwt": true
       }
     },
-    // "wizardSteps": [
-    //     { "label": "Mobile App Interaction Activity", "key": "step1" }
-    // ],
     "userInterfaces": {
         "configModal": {
             "height": 200,
