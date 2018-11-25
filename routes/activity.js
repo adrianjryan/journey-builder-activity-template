@@ -83,7 +83,7 @@ exports.execute = function (req, res) {
             console.error(err);
             return res.status(401).end();
         }
-
+        console.log("------ABC--------");
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
             // decoded in arguments
@@ -93,7 +93,7 @@ exports.execute = function (req, res) {
 
             //-- OK SO this is what get called whne this bugger is executed in the Journey
 
-            request.post({
+            req.post({
                 "headers": { "content-type": "application/json" },
                 "url": "http://httpbin.org/post",
                 "body": JSON.stringify({
@@ -107,7 +107,7 @@ exports.execute = function (req, res) {
                 console.dir(JSON.parse(body));
             });
 
-
+            console.log("------123--------");
             // This is a returmn of positive when sh's done.
             res.send(200, 'Execute');
         } else {

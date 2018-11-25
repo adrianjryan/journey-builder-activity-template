@@ -24,9 +24,9 @@ app.use(bodyParser.raw({type: 'application/jwt'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Express in Development Mode
-//if ('development' == app.get('env')) {  SHOVE INTO DEV MODE
+if ('development' == app.get('env')) {
   app.use(errorhandler());
-//}
+}
 
 // HubExchange Routes
 app.get('/', routes.index );
