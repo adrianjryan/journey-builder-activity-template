@@ -93,13 +93,31 @@ exports.execute = function (req, res) {
 
             //-- OK SO this is what get called whne this bugger is executed in the Journey
 
-            request.post({
-              headers: {'content-type' : 'application/json'},
-              url:     'http://httpbin.org/post',
-              body:   { 'name':'vABCD' }
-            }, function(error, response, body){
-              console.log(body);
+            var options = {
+                uri: 'https://www.googleapis.com/urlshortener/v1/url',
+                method: 'POST',
+                json: {
+                    "longUrl": "http://www.google.com/"
+                }
+            };
+
+
+            console.log("------123AAA--------");
+
+
+            request(options, function (error, response, body) {
+              if (!error && response.statusCode == 200) {
+                console.log(body.id) // Print the shortened url.
+              }
             });
+
+            // request.post({
+            //   headers: {'content-type' : 'application/json'},
+            //   url:     'http://httpbin.org/post',
+            //   body:   { 'name':'vABCD' }
+            // }, function(error, response, body){
+            //   console.log(body);
+            // });
 
 
             console.log("------123--------");
