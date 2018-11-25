@@ -92,10 +92,13 @@ exports.execute = function (req, res) {
             logData(req);
 
             //-- OK SO this is what get called whne this bugger is executed in the Journey
-            request.post({'http://httpbin.org/post', form: { 'name':'vABCD' }}, function(err, res, body) => {
-                if (err) { return console.log(err); }
-                console.log(body.url);
-                console.log(body.explanation);
+
+            request.post({
+              headers: {'content-type' : 'application/json'},
+              url:     'http://httpbin.org/post',
+              body:   { 'name':'vABCD' }
+            }, function(error, response, body){
+              console.log(body);
             });
 
 
