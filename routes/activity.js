@@ -108,7 +108,8 @@ exports.execute = function (req, res) {
             request(options, function (error, response, body) {
               if (!error && response.statusCode == 200) {
                 console.log(body.id) // Print the shortened url.
-              }
+              } else
+                console.log(error)
             });
 
             // request.post({
